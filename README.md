@@ -27,6 +27,12 @@ Recall = TP / ( TP + FN )
 F-Measure = (2 * Precision * Recall) / (Precision + Recall)
 ```
 
+**Accuracy quantifies Formula :**
+```
+accuracy = (TruePositives + TrueNegative) / (TruePositives + FalsePositive + False Negative + TrueNegative)
+accuracy = (TP + TN) / (TP + FP + FN + TN)
+```
+
 **Code (python class) :**
 ```
 class confusionMatrixClassification:
@@ -68,6 +74,12 @@ class confusionMatrixClassification:
 
 	def precision(self):
 		try:
+			return ( self.getTP() + self.getTF() ) / ( self.getTP() + self.getTF() + self.getFP() + self.getFN() )
+		except:
+			return -1 # error
+			
+	def accuracy(self):
+		try:
 			return self.getTP() / ( self.getTP() + self.getFP() )
 		except:
 			return -1 # error
@@ -99,7 +111,8 @@ cmc.setTP(90)
 cmc.setFP(30)
 cmc.setFN(10)
 
-print("Precision : " + str(cmc.precision())) # 0.75
+print("Accuracy : " + str(cmc.accuracy())) # 0.75
+print("Precision : " + str(cmc.precision())) # 0.6923076923076923
 print("Recall : " + str(cmc.recall())) # 0.9
-print("F-Measure : " + str(cmc.fmeasure())) #0.909090909091
+print("F-Measure : " + str(cmc.fmeasure())) # 0.8695652173913042
 ```
