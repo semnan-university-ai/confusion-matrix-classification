@@ -1,5 +1,5 @@
 # confusion-matrix-classification
-Calculate Precision &amp; Recall &amp; F-Measure with Confusion Matrix (TP, TN, FP, FN)
+Calculate Precision &amp; Recall &amp; F-Measure & Accuracy with Confusion Matrix (TP, TN, FP, FN)
 
 
 **Confusion Matrix ::**
